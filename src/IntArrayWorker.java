@@ -37,9 +37,6 @@ public class IntArrayWorker {
 			}			
 		}
 		return count;
-
-
-
 	}
 
 	/**
