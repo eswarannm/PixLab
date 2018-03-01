@@ -200,25 +200,20 @@ public class Picture extends SimplePicture {
 		}
 	}
 
-	// public void scale(){
-	// 	Picture p = new Picture("belin.jpg");  
-	// 	Picture smallP = p.scale(0.25,0.25);  
-	// 	smallP.write("smallMyPicture.jpg");  
-	// }
+	public void scale(){
+		Picture p = new Picture("belin.jpg");  
+		Picture smallP = p.scale(0.25,0.25);  
+		smallP.write("smallMyPicture.jpg");  
+	}
 
 	/*
 	 * Main method for testing - each class in Java can have a main method
 	 */
 	public static void main(String[] args) {
-		// Picture smallMyPicture = new Picture("smallMyPicture.jpg");
-		// smallMyPicture.explore();
-		// smallMyPicture.zeroBlue();
-		// smallMyPicture.explore();
-
-		Picture beach = new Picture("beach.jpg");
-		beach.explore();
-		beach.zeroBlue();
-		beach.explore();
+		Picture smallMyPicture = new Picture("smallMyPicture.jpg");
+		smallMyPicture.explore();
+		smallMyPicture.zeroBlue();
+		smallMyPicture.explore();
 	}
 
 } // this } is the end of class Picture, put all new methods before this
