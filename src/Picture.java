@@ -86,11 +86,21 @@ public class Picture extends SimplePicture {
 	}
 
 	/** Method to set the blue to 0 */
-	public void zeroBlue() {
+	public void keepOnlyBlue() {
 		Pixel[][] pixels = this.getPixels2D();
 		for (Pixel[] rowArray : pixels) {
 			for (Pixel pixelObj : rowArray) {
 				pixelObj.setBlue(0);
+			}
+		}
+	}
+
+	public void zeroBlue() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				pixelObj.setGreen(0);
+				pixelObj.setRed(0);
 			}
 		}
 	}
