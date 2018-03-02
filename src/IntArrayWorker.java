@@ -52,6 +52,14 @@ public class IntArrayWorker {
 
 	}
 
+	public int getColTotal(int n){
+		int total = 0;
+		for (int row = 0; row < matrix.length; row++){
+			total+= matrix[row][n];
+		}
+		return total;
+	}
+
 	/**
 	 * Method to return the total using a nested for-each loop
 	 * 
