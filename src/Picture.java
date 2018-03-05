@@ -106,16 +106,16 @@ public class Picture extends SimplePicture {
 		}
 	}
 
-	// public void grayscale() {
-	// 	Pixel[][] pixels = this.getPixels2D();
-	// 	for (Pixel[] rowArray : pixels) {
-	// 		for (Pixel pixelObj : rowArray) {
-	// 			pixelObj.setRed(255 - ______);
-	// 			pixelObj.setGreen(255 - ______);
-	// 			pixelObj.setBlue(255 - _________);
-	// 		}
-	// 	}
-	// }
+	public void grayscale() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				pixelObj.setRed((pixelObj.getRed()+pixelObj.getGreen()+pixelObj.getBlue())/3);
+				pixelObj.setGreen((pixelObj.getRed()+pixelObj.getGreen()+pixelObj.getBlue())/3);
+				pixelObj.setBlue((pixelObj.getRed()+pixelObj.getGreen()+pixelObj.getBlue())/3);
+			}
+		}
+	}
 
 	public void zeroBlue() {
 		Pixel[][] pixels = this.getPixels2D();
