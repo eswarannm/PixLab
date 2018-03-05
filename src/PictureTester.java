@@ -33,6 +33,14 @@ public class PictureTester
     beach.explore();
   }
 
+  public static void testFixUnderwater()
+  {
+    Picture water = new Picture("water.jpg");
+    water.explore();
+    water.fixUnderwater();
+    water.explore();
+  }
+
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
@@ -88,8 +96,8 @@ public class PictureTester
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
-    testGrayscale();
-    //testFixUnderwater();
+    //testGrayscale();
+    testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
