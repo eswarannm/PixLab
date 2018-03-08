@@ -329,16 +329,21 @@ public class Picture extends SimplePicture {
 	public void createCollage() {
 		Picture swan = new Picture("swan.jpg");
 		Picture beach = new Picture("beach.jpg");
+		Picture koala = new Picture("koala.jpg");
 		this.copy(swan, 5, 10,70,90);
 		this.copy(beach, 100, 70,40,70);
-		this.copy(swan, 200, 240,90,40);
-		Picture flowerNoBlue = new Picture(beach);
-		flowerNoBlue.zeroBlue();
-		this.copy(flowerNoBlue, 300, 600,25,65);
-		this.copy(swan, 400, 200,10,30);
-		this.copy(beach, 400, 40, 30,70);
+		this.copy(koala, 200, 240,90,40);
+		Picture beachNoBlue = new Picture(beach);
+		beachNoBlue.zeroBlue();
+		Picture swanNegate = new Picture(swan);
+		swanNegate.negate();
+		Picture koalaNegate = new Picture(koala);
+		koalaNegate.negate();
+		this.copy(beachNoBlue, 300, 600,25,65);
+		this.copy(swanNegate, 400, 200,10,30);
+		this.copy(koalaNegate, 400, 40, 30,70);
 		this.mirrorVertical();
-		this.write("collage.jpg");
+		this.write("myCollage.jpg");
 	}
 
 	/**
