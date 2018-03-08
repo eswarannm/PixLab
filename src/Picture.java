@@ -355,6 +355,8 @@ public class Picture extends SimplePicture {
 	public void edgeDetection(int edgeDist) {
 		Pixel leftPixel = null;
 		Pixel rightPixel = null;
+		Pixel topPixel = null;
+		Pixel bottomPixel = null;
 		Pixel[][] pixels = this.getPixels2D();
 		Color rightColor = null;
 		for (int row = 0; row < pixels.length; row++) {
@@ -366,6 +368,17 @@ public class Picture extends SimplePicture {
 					leftPixel.setColor(Color.BLACK);
 				else
 					leftPixel.setColor(Color.WHITE);
+			}
+		}
+		for (int col = 0; col < pixels[0].length; col++) {
+			for (int row = 0; row < pixels.length- 1; row++) {
+				topPixel = pixels[row][col];
+				bottomPixel = pixels[row + 1][col];
+				rightColor = bottomPixel.getColor();
+				if (topPixel.colorDistance(rightColor) > edgeDist)
+					topPixel.setColor(Color.BLACK);
+				else
+					topPixel.setColor(Color.WHITE);
 			}
 		}
 	}
