@@ -326,7 +326,7 @@ public class Picture extends SimplePicture {
 	}
 
 	/** Method to create a collage of several pictures */
-	public void createCollage() {
+	public void myCollage() {
 		Picture swan = new Picture("swan.jpg");
 		Picture beach = new Picture("beach.jpg");
 		Picture koala = new Picture("koala.jpg");
@@ -343,7 +343,7 @@ public class Picture extends SimplePicture {
 		this.copy(swanNegate, 400, 200,10,30);
 		this.copy(koalaNegate, 400, 40, 30,70);
 		this.mirrorVertical();
-		this.write("myCollage.jpg");
+		this.write("collage.jpg");
 	}
 
 	/**
