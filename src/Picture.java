@@ -293,14 +293,30 @@ public class Picture extends SimplePicture {
 	 * @param startCol
 	 *            the start col to copy to
 	 */
-	public void copy(Picture fromPic, int startRow, int startCol) {
+	// public void copy(Picture fromPic, int startRow, int startCol) {
+	// 	Pixel fromPixel = null;
+	// 	Pixel toPixel = null;
+	// 	Pixel[][] toPixels = this.getPixels2D();
+	// 	Pixel[][] fromPixels = fromPic.getPixels2D();
+	// 	for (int fromRow = 0, toRow = startRow; fromRow < fromPixels.length
+	// 			&& toRow < toPixels.length; fromRow++, toRow++) {
+	// 		for (int fromCol = 0, toCol = startCol; fromCol < fromPixels[0].length
+	// 				&& toCol < toPixels[0].length; fromCol++, toCol++) {
+	// 			fromPixel = fromPixels[fromRow][fromCol];
+	// 			toPixel = toPixels[toRow][toCol];
+	// 			toPixel.setColor(fromPixel.getColor());
+	// 		}
+	// 	}
+	// }
+
+	public void copy(Picture fromPic, int startRow, int startCol, int endRow, int endCol) {
 		Pixel fromPixel = null;
 		Pixel toPixel = null;
 		Pixel[][] toPixels = this.getPixels2D();
 		Pixel[][] fromPixels = fromPic.getPixels2D();
-		for (int fromRow = 0, toRow = startRow; fromRow < fromPixels.length
+		for (int fromRow = 0, toRow = startRow; fromRow < endRow
 				&& toRow < toPixels.length; fromRow++, toRow++) {
-			for (int fromCol = 0, toCol = startCol; fromCol < fromPixels[0].length
+			for (int fromCol = 0, toCol = startCol; fromCol < endCol
 					&& toCol < toPixels[0].length; fromCol++, toCol++) {
 				fromPixel = fromPixels[fromRow][fromCol];
 				toPixel = toPixels[toRow][toCol];
@@ -311,16 +327,16 @@ public class Picture extends SimplePicture {
 
 	/** Method to create a collage of several pictures */
 	public void createCollage() {
-		Picture flower1 = new Picture("flower1.jpg");
-		Picture flower2 = new Picture("flower2.jpg");
-		this.copy(flower1, 0, 0);
-		this.copy(flower2, 100, 0);
-		this.copy(flower1, 200, 0);
-		Picture flowerNoBlue = new Picture(flower2);
+		Picture swan = new Picture("swan.jpg");
+		Picture beach = new Picture("beach.jpg");
+		this.copy(swan, 5, 10,70,90);
+		this.copy(beach, 100, 70,40,70);
+		this.copy(swan, 200, 240,90,40);
+		Picture flowerNoBlue = new Picture(beach);
 		flowerNoBlue.zeroBlue();
-		this.copy(flowerNoBlue, 300, 0);
-		this.copy(flower1, 400, 0);
-		this.copy(flower2, 500, 0);
+		this.copy(flowerNoBlue, 300, 600,25,65);
+		this.copy(swan, 400, 200,10,30);
+		this.copy(beach, 400, 40, 30,70);
 		this.mirrorVertical();
 		this.write("collage.jpg");
 	}
